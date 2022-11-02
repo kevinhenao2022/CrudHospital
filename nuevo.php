@@ -52,8 +52,8 @@
                         </div>
                         <hr>
                         <div class="col-md-8">
-                            <label for="direccion" class="form-label">direccion</label>
-                            <input type="text" id="direccion" name="direccion" class="form-control" required>
+                            <label for="medico" class="form-label">medico</label>
+                            <input type="text" id="medico" name="medico" class="form-control" required>
                         </div>
                         <hr>
 

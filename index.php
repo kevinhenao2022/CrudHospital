@@ -6,7 +6,7 @@ $con = $db->conectar();
 
 $activo = 1;
 
-$comando = $con->prepare("SELECT id, nombres, apellidos, direccion, telefono, direccion, correo_electronico, fecha_cita FROM pacientes WHERE activo=:mi_activo ORDER BY nombres ASC");
+$comando = $con->prepare("SELECT id, nombres, apellidos, medico, telefono, correo_electronico, fecha_cita FROM pacientes WHERE activo=:mi_activo ORDER BY nombres ASC");
 $comando->execute(['mi_activo'=>$activo]);
 $resultado = $comando->fetchALL(PDO::FETCH_ASSOC);
 
@@ -62,7 +62,7 @@ $resultado = $comando->fetchALL(PDO::FETCH_ASSOC);
                                 <th>nombre</th>
                                 <th>apellidos</th>
                                 <th>telefono</th>
-                                <th>calle</th>
+                                <th>medico</th>
                                 <th>correo</th>
                                 <th>fecha cita</th>
                                 <th>actualizar</th>
@@ -76,7 +76,7 @@ $resultado = $comando->fetchALL(PDO::FETCH_ASSOC);
                                 <td><?php echo $row['nombres'] ?></td>
                                 <td><?php echo $row['apellidos'] ?></td>
                                 <td><?php echo $row['telefono'] ?></td>
-                                <td><?php echo $row['direccion'] ?></td>
+                                <td><?php echo $row['medico'] ?></td>
                                 <td><?php echo $row['correo_electronico'] ?></td>
                                 <td><?php echo $row['fecha_cita'] ?></td>
                                 <td><a href="editar.php?id=<?php echo $row['id'] ?>" class="btn btn-primary">Editar</a></td>

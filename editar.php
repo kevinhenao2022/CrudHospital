@@ -8,7 +8,7 @@ $con = $db->conectar();
 $id = $_GET['id'];
 $activo = 1;
 
-$query = $con->prepare("SELECT nombres, apellidos, direccion, telefono, correo_electronico, fecha_cita FROM pacientes WHERE id=:id AND activo=:activo");
+$query = $con->prepare("SELECT nombres, apellidos, medico, telefono, correo_electronico, fecha_cita FROM pacientes WHERE id=:id AND activo=:activo");
 $query->execute(['id'=>$id, 'activo'=>$activo]);
 $num = $query->rowCount();
 
@@ -78,8 +78,8 @@ if ($num>0) {
                         </div>
                         <hr>
                         <div class="col-md-12">
-                            <label for="direccion" class="form-label">direccion</label>
-                            <input type="text" id="direccion" name="direccion" class="form-control" value="<?php echo $row['direccion']; ?>" required autofocus>
+                            <label for="medico" class="form-label">medico</label>
+                            <input type="text" id="medico" name="medico" class="form-control" value="<?php echo $row['medico']; ?>" required autofocus>
                         </div>
                         <hr>
                         <div class="col-md-12">
